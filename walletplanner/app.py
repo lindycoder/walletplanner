@@ -16,8 +16,8 @@ else:
     app.logger.info('Using secret key from SECRET_KEY env var')
 
 # Import blueprints once everything is configured
-from .ui import blueprint as ui_blueprint
-from .api import blueprint as api_blueprint
+from walletplanner.ui import blueprint as ui_blueprint
+from walletplanner.api import blueprint as api_blueprint
 
 # Create blueprints for the UI and API
 app.register_blueprint(api_blueprint)

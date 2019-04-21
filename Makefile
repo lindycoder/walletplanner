@@ -68,6 +68,7 @@ unstack: ## Make a local docker compose deployment shutdown
 
 JSTEST_CONTAINER:=docker run -it --rm \
 	-v `pwd`/$(APP_NAME)/static:/usr/src/app/$(APP_NAME)/static:ro \
+	-v `pwd`/$(APP_NAME)/static/js/__snapshots__:/usr/src/app/$(APP_NAME)/static/js/__snapshots__ \
 	-v `pwd`/setupTests.js:/usr/src/app/setupTests.js:ro \
 	-v `pwd`/.babelrc:/usr/src/app/.babelrc:ro \
 	$(IMAGE):jsdev
@@ -86,7 +87,8 @@ jsdependencies-update: jsdev-image ## Update package lock
 	$(JSDEPENDENCIES_CONTAINER) npm update
 	$(JSDEPENDENCIES_CONTAINER) npm audit fix
 
-PYTEST_CONTAINER:=docker run -it --rm -v `pwd`:/usr/src/app $(IMAGE):pydev
+PYTEST_CONTAINER:=docker run -it --rm \
+	-v `pwd`:/usr/src/app $(IMAGE):pydev
 pytest: pydev-image ## Make a pytest run in docker
 	$(PYTEST_CONTAINER) python run_tests.py -vxrs tests/
 

@@ -1,7 +1,3 @@
-import datetime
-import json
-import os
-
 from flask import Blueprint, jsonify
 
 blueprint = Blueprint('api', __name__)
@@ -13,6 +9,7 @@ class APIError(Exception):
     Follows the API exception raising and handling pattern documented
     at http://flask.pocoo.org/docs/0.12/patterns/apierrors/
     """
+
     def __init__(self, status_code, payload):
         super(APIError, self).__init__(self)
         self.status_code = status_code
