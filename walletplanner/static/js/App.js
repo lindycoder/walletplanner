@@ -71,6 +71,7 @@ class App extends React.Component {
 App.propTypes = {
   homeUrl: PropTypes.string.isRequired,
   echoUrl: PropTypes.string.isRequired,
+  api_catalog: PropTypes.string.isRequired,
 };
 
 export default App;

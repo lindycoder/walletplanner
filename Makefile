@@ -67,10 +67,10 @@ unstack: ## Make a local docker compose deployment shutdown
 	docker stack rm $(APP_NAME)
 
 JSTEST_CONTAINER:=docker run -it --rm \
-	-v `pwd`/$(APP_NAME)/static:/usr/src/app/$(APP_NAME)/static:ro \
+	-v `pwd`/$(APP_NAME)/static:/usr/src/app/$(APP_NAME)/static \
 	-v `pwd`/$(APP_NAME)/static/js/tests:/usr/src/app/$(APP_NAME)/static/js/tests \
-	-v `pwd`/setupTests.js:/usr/src/app/setupTests.js:ro \
-	-v `pwd`/.babelrc:/usr/src/app/.babelrc:ro \
+	-v `pwd`/setupTests.js:/usr/src/app/setupTests.js \
+	-v `pwd`/.babelrc:/usr/src/app/.babelrc: \
 	$(IMAGE):jsdev
 jstest: jsdev-image # Make a jest test run in docker
 	$(JSTEST_CONTAINER) npm run test -- --coverage

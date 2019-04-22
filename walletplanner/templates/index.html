@@ -4,6 +4,9 @@
   initApp({
     homeUrl: "{{ url_for('ui.index') }}",
     echoUrl: "{{ url_for('api.echo', value='') }}",
+    api_catalog: {
+      transactions: "{{ url_for('transactions.add_transaction') }}"
+    }
   });
 </script>
 {% endblock %}
