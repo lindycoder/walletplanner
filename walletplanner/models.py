@@ -6,3 +6,5 @@ class Transaction:
     amount: int
     description: str = None
     category: str = None
+
+    id: str = None
