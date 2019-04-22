@@ -68,7 +68,7 @@ unstack: ## Make a local docker compose deployment shutdown
 
 JSTEST_CONTAINER:=docker run -it --rm \
 	-v `pwd`/$(APP_NAME)/static:/usr/src/app/$(APP_NAME)/static:ro \
-	-v `pwd`/$(APP_NAME)/static/js/__snapshots__:/usr/src/app/$(APP_NAME)/static/js/__snapshots__ \
+	-v `pwd`/$(APP_NAME)/static/js/tests:/usr/src/app/$(APP_NAME)/static/js/tests \
 	-v `pwd`/setupTests.js:/usr/src/app/setupTests.js:ro \
 	-v `pwd`/.babelrc:/usr/src/app/.babelrc:ro \
 	$(IMAGE):jsdev

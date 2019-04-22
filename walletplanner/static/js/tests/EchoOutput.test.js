@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import EchoOutput from './EchoOutput';
+import EchoOutput from '../EchoOutput';
 
 describe('EchoOutput', () => {
   it('should render an initial value', () => {
