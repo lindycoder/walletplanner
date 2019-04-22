@@ -1,6 +1,6 @@
 from abc import ABCMeta
 from asyncio.futures import Future
-from collections import Callable
+from collections.abc import Callable
 from dataclasses import dataclass
 from functools import partial
 from unittest import mock

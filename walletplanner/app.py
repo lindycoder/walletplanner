@@ -20,7 +20,10 @@ else:
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'testing-secret-key')
     app.logger.info('Using secret key from SECRET_KEY env var')
 
-app.config["di.transactions"] = Transactions()
+app.config["di.transaction_source"] = None
+app.config["di.transactions"] = Transactions(
+    transaction_source=app.config["di.transaction_source"]
+)
 
 # Create blueprints for the UI and API
 app.register_blueprint(api_blueprint)
