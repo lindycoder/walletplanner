@@ -95,3 +95,4 @@ generated/
 
 venv
 *.iml
+node_modules

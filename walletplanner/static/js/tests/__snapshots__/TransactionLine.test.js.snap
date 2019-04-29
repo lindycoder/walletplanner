@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionLine should render an initial value 1`] = `
+<div
+  className="form-row"
+>
+  <div
+    className="form-group col-sm-11"
+  >
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={10}
+    />
+  </div>
+</div>
+`;
