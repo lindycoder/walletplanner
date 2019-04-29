@@ -24,6 +24,6 @@ describe('TransactionLine', () => {
 
     it('should invoke onChange when the input text changes', () => {
         wrapper.find('CurrencyInput').first().simulate('changeEvent');
-        expect(props.onChange).toHaveBeenCalled();
+        expect(props.onChange).toHaveBeenCalledWith(props.transaction);
     });
 });

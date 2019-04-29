@@ -11,9 +11,12 @@ class TransactionLine extends React.Component {
         }
     }
 
-    handleChange(event, maskedvalue, floatvalue){
-        this.setState({transaction: {amount: maskedvalue}});
-        this.props.onChange()
+    handleChange(event, maskedvalue, floatvalue) {
+        const transaction = this.state.transaction;
+        transaction.amount = maskedvalue;
+
+        this.setState({transaction: transaction});
+        this.props.onChange(this.state.transaction);
     }
 
     render() {
@@ -30,7 +33,7 @@ class TransactionLine extends React.Component {
 
 TransactionLine.propTypes = {
   transaction: PropTypes.any.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func
 };
 
 export default TransactionLine;
