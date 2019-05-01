@@ -7,7 +7,9 @@
     "test": "jest"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.7.0",
@@ -27,6 +29,10 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>setupTests.js",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/venv/"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],

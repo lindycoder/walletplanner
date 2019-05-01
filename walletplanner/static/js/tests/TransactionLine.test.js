@@ -27,3 +27,23 @@ describe('TransactionLine', () => {
         expect(props.onChange).toHaveBeenCalledWith(props.transaction);
     });
 });
+
+describe('TransactionLine without OnChange', () => {
+    let props;
+    let wrapper;
+
+    beforeEach(() => {
+        props = {
+            transaction: {
+               "amount": 10,
+               "description": "desc1",
+               "category": "cat1"
+            }
+        };
+        wrapper = shallow(<TransactionLine {...props} />);
+    });
+
+    it('should not fail when a change occurs without an onchange prop', () => {
+        wrapper.find('CurrencyInput').first().simulate('changeEvent');
+    });
+});

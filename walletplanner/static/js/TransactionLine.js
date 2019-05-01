@@ -16,7 +16,10 @@ class TransactionLine extends React.Component {
         transaction.amount = maskedvalue;
 
         this.setState({transaction: transaction});
-        this.props.onChange(this.state.transaction);
+
+        if (typeof this.props.onChange === 'function') {
+            this.props.onChange(this.state.transaction);
+        }
     }
 
     render() {

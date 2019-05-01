@@ -39,7 +39,7 @@ jsdev-image: ## Make a JavaScript docker image with dev/test depdendencies
 prod-image: ## Make a docker image with minimal Python deps and minified JavaScript
 	docker build --rm --target production -t $(IMAGE):$(TAG) .
 
-flask: ## Make a dev flask server with source mounted from host
+flask: pydev-image ## Make a dev flask server with source mounted from host
 	docker run -it --rm \
 		-e FLASK_APP=$(APP_NAME) \
 		-e FLASK_DEBUG=1 \
@@ -49,7 +49,7 @@ flask: ## Make a dev flask server with source mounted from host
 		$(IMAGE):pydev \
 		flask run -h 0.0.0.0
 
-parcel: ## Make a dev parcel builder watching source on the host
+parcel: jsdev-image ## Make a dev parcel builder watching source on the host
 	docker run -it --rm \
 		-p 5001:5001 \
 		-v `pwd`/$(APP_NAME)/static:/usr/src/app/$(APP_NAME)/static \

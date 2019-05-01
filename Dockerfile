@@ -36,6 +36,8 @@ COPY package.json package-lock.json /usr/src/app/
 RUN cd /usr/src/app && \
     npm ci .
 
+COPY .babelrc .
+
 ############# JavaScript minification build stage
 
 FROM jsdev as builder
