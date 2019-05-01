@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 
+from walletplanner.adapters.memory_transaction_source import MemoryTransactionSource
 from walletplanner.api import blueprint as api_blueprint
 from walletplanner.api.transactions import blueprint as transactions_blueprint
 from walletplanner.transactions import Transactions
@@ -20,7 +21,7 @@ else:
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'testing-secret-key')
     app.logger.info('Using secret key from SECRET_KEY env var')
 
-app.config["di.transaction_source"] = None
+app.config["di.transaction_source"] = MemoryTransactionSource()
 app.config["di.transactions"] = Transactions(
     transaction_source=app.config["di.transaction_source"]
 )

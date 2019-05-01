@@ -13,7 +13,7 @@ class TransactionLine extends React.Component {
 
     handleChange(event, maskedvalue, floatvalue) {
         const transaction = this.state.transaction;
-        transaction.amount = maskedvalue;
+        transaction.amount = Math.trunc(floatvalue * 100);
 
         this.setState({transaction: transaction});
 

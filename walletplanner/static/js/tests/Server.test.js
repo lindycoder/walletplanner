@@ -26,6 +26,9 @@ describe('Server', () => {
     expect(fetch.mock.calls[0][0]).toEqual('/api/transactions')
     expect(fetch.mock.calls[0][1]).toEqual({
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         "amount": 1000,
         "description": "stuff",
