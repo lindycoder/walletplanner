@@ -7,3 +7,6 @@ class Transactions:
 
     def add_transaction(self, transaction: Transaction):
         self.transaction_source.save(transaction)
+
+    def get_all(self):
+        return self.transaction_source.get_all()

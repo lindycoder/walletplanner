@@ -7,3 +7,7 @@ class TransactionSource(ABC):
     @abstractmethod
     def save(self, transaction: Transaction):
         pass
+
+    @abstractmethod
+    def get_all(self):
+        pass

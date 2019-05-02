@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 
 from walletplanner.models import Transaction
 from walletplanner.transactions import Transactions
@@ -27,3 +27,14 @@ def add_transaction():
     ))
 
     return "", 201
+
+
+@blueprint.route('', methods=['GET'], strict_slashes=False)
+def get_transaction():
+    return jsonify([
+        {
+            "amount": t.amount,
+            "description": t.description,
+            "category": t.category
+        } for t in blueprint.core_transactions.get_all()
+     ])

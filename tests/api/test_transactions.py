@@ -2,6 +2,7 @@ import pytest
 from flask import Flask
 
 from tests.flexermock import flexermock, capture
+from walletplanner.models import Transaction
 from walletplanner.transactions import Transactions
 
 
@@ -36,3 +37,26 @@ def test_add_transaction(client, core_transactions):
     assert capture.transaction.amount == 1000
     assert capture.transaction.description == "stuff"
     assert capture.transaction.category == "cat1"
+
+
+def test_get_transactions(client, core_transactions):
+    core_transactions.should_receive("get_all").and_return([
+        Transaction(100, description="desc1", category="cat1"),
+        Transaction(200)]
+    )
+
+    resp = client.get('/api/transactions')
+
+    assert resp.status_code == 200
+
+    assert resp.json == [
+        {
+            "amount": 100,
+            "description": "desc1",
+            "category": "cat1"
+        },
+        {
+            "amount": 200,
+            "description": None,
+            "category": None
+        }]
