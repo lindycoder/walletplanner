@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionBadge should render 1`] = `
+<div
+  className="list-group-item transaction-badge-amount"
+>
+  10.00$
+</div>
+`;
