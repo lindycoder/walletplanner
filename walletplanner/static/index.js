@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 import App from './js/App';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 /** Initialize the main application page */
 window.initApp = ({homeUrl, echoUrl, apiCatalog}) => {
@@ -11,6 +12,6 @@ window.initApp = ({homeUrl, echoUrl, apiCatalog}) => {
     <App
       homeUrl={homeUrl}
       echoUrl={echoUrl}
-      apiCatalog={apiCatalog} />,
+      server={new Server(apiCatalog)} />,
     document.getElementById('root'));
 }

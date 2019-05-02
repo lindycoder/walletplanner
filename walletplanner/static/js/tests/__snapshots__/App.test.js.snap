@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App On transaction added, should refresh the transaction list 1`] = `
+<div
+  className="App container"
+>
+  <h1
+    className="display-4"
+  >
+    Wall Planner
+  </h1>
+  <AddTransactions
+    onTransactionAdded={[Function]}
+    server={
+      Object {
+        "getTransactions": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": Promise {},
+            },
+          ],
+        },
+      }
+    }
+  />
+  <TransactionsView
+    transactions={
+      Array [
+        Object {
+          "amount": 100,
+        },
+        Object {
+          "amount": 200,
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`App should render correctly 1`] = `
+<div
+  className="App container"
+>
+  <h1
+    className="display-4"
+  >
+    Wall Planner
+  </h1>
+  <AddTransactions
+    onTransactionAdded={[Function]}
+    server={
+      Object {
+        "getTransactions": [MockFunction],
+      }
+    }
+  />
+  <TransactionsView
+    transactions={Array []}
+  />
+</div>
+`;

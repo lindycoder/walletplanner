@@ -36,7 +36,8 @@ class AddTransactions extends React.Component {
 
 
 AddTransactions.propTypes = {
-  server: PropTypes.any.isRequired
+  server: PropTypes.any.isRequired,
+  onTransactionAdded: PropTypes.any
 };
 
 export default AddTransactions;
