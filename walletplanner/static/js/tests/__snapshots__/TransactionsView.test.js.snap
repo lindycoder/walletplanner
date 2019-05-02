@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionsView should render correctly 1`] = `
+<div>
+  <TransactionBadge
+    key="0"
+    transaction={
+      Object {
+        "amount": 1000,
+        "category": "cat1",
+        "description": "desc1",
+      }
+    }
+  />
+  <TransactionBadge
+    key="1"
+    transaction={
+      Object {
+        "amount": 2000,
+        "category": "cat1",
+        "description": "desc2",
+      }
+    }
+  />
+</div>
+`;
