@@ -17,7 +17,7 @@ describe('App', () => {
     });
 
     it('should be able to add and see a transaction', async () => {
-        let transactionAmountInput = wrapper.find('input').first();
+        let transactionAmountInput = wrapper.find('input.transaction-line-amount').first();
         transactionAmountInput.instance().value = '1.00';
         transactionAmountInput.simulate('change');
 
@@ -28,6 +28,7 @@ describe('App', () => {
         await undefined;
         wrapper.update();
 
-        expect(wrapper.find('.transaction-badge-amount').text()).toBe("1.00$")
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find('.transaction-badge-amount').text()).toBe("1.00$");
     });
 });

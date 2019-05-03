@@ -7,9 +7,46 @@ exports[`TransactionLine should render an initial value 1`] = `
   <div
     className="form-group col-sm-11"
   >
+    <DatePicker
+      allowSameDay={false}
+      className="transaction-line-date"
+      dateFormat="MM/dd/yyyy"
+      dateFormatCalendar="LLLL yyyy"
+      disabled={false}
+      disabledKeyboardNavigation={false}
+      dropdownMode="scroll"
+      inlineFocusSelectedMonth={false}
+      monthsShown={1}
+      nextMonthButtonLabel="Next month"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onInputClick={[Function]}
+      onInputError={[Function]}
+      onKeyDown={[Function]}
+      onMonthChange={[Function]}
+      onSelect={[Function]}
+      onYearChange={[Function]}
+      preventOpenOnFocus={false}
+      previousMonthButtonLabel="Previous Month"
+      readOnly={false}
+      renderDayContents={[Function]}
+      selected={2019-01-02T03:04:05.678Z}
+      shouldCloseOnSelect={true}
+      showMonthYearPicker={false}
+      showTimeInput={false}
+      showTimeSelect={false}
+      strictParsing={false}
+      timeCaption="Time"
+      timeInputLabel="Time"
+      timeIntervals={30}
+      withPortal={false}
+    />
     <CurrencyInput
       allowNegative={false}
       autoFocus={false}
+      className="transaction-line-amount"
       decimalSeparator="."
       inputType="text"
       onChange={[Function]}

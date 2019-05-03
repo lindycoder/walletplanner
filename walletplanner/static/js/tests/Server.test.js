@@ -14,6 +14,7 @@ describe('Server', () => {
   it('Should add a transaction ', async () => {
     const transaction = {
       "amount": 1000,
+      "date": new Date("2019-02-01"),
       "description": "stuff",
       "category": "cat1"
     };
@@ -31,6 +32,7 @@ describe('Server', () => {
       },
       body: JSON.stringify({
         "amount": 1000,
+        "date": "2019-02-01",
         "description": "stuff",
         "category": "cat1"
       })
@@ -40,6 +42,7 @@ describe('Server', () => {
   it('Should get the transaction ', async () => {
     const transactions = [{
       "amount": 1000,
+      "date": "2019-02-01",
       "description": "stuff",
       "category": "cat1"
     }];
@@ -48,7 +51,12 @@ describe('Server', () => {
 
     let returnedTransactions = await server.getTransactions();
 
-    expect(returnedTransactions).toEqual(transactions)
+    expect(returnedTransactions).toEqual([{
+        "amount": 1000,
+        "date": new Date("2019-02-01"),
+        "description": "stuff",
+        "category": "cat1"
+    }]);
 
     expect(fetch.mock.calls[0][0]).toEqual('/api/transactions')
   });

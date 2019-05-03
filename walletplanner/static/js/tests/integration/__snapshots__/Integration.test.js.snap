@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should be able to add and see a transaction 1`] = `
+<App
+  echoUrl="/echo-url"
+  homeUrl="/home-url"
+  server={
+    FakeServer {
+      "transactions": Array [
+        Object {
+          "amount": 100,
+          "category": "",
+          "description": "",
+        },
+      ],
+    }
+  }
+>
+  <div
+    className="App container"
+  >
+    <h1
+      className="display-4"
+    >
+      Wall Planner
+    </h1>
+    <AddTransactions
+      onTransactionAdded={[Function]}
+      server={
+        FakeServer {
+          "transactions": Array [
+            Object {
+              "amount": 100,
+              "category": "",
+              "description": "",
+            },
+          ],
+        }
+      }
+    >
+      <div>
+        Add transactions
+        <TransactionLine
+          transaction={
+            Object {
+              "amount": 100,
+              "category": "",
+              "description": "",
+            }
+          }
+        >
+          <div
+            className="form-row"
+          >
+            <div
+              className="form-group col-sm-11"
+            >
+              <DatePicker
+                allowSameDay={false}
+                className="transaction-line-date"
+                dateFormat="MM/dd/yyyy"
+                dateFormatCalendar="LLLL yyyy"
+                disabled={false}
+                disabledKeyboardNavigation={false}
+                dropdownMode="scroll"
+                inlineFocusSelectedMonth={false}
+                monthsShown={1}
+                nextMonthButtonLabel="Next month"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClickOutside={[Function]}
+                onFocus={[Function]}
+                onInputClick={[Function]}
+                onInputError={[Function]}
+                onKeyDown={[Function]}
+                onMonthChange={[Function]}
+                onSelect={[Function]}
+                onYearChange={[Function]}
+                preventOpenOnFocus={false}
+                previousMonthButtonLabel="Previous Month"
+                readOnly={false}
+                renderDayContents={[Function]}
+                shouldCloseOnSelect={true}
+                showMonthYearPicker={false}
+                showTimeInput={false}
+                showTimeSelect={false}
+                strictParsing={false}
+                timeCaption="Time"
+                timeInputLabel="Time"
+                timeIntervals={30}
+                withPortal={false}
+              >
+                <PopperComponent
+                  hidePopper={true}
+                  popperComponent={null}
+                  popperModifiers={
+                    Object {
+                      "preventOverflow": Object {
+                        "boundariesElement": "viewport",
+                        "enabled": true,
+                        "escapeWithReference": true,
+                      },
+                    }
+                  }
+                  popperPlacement="bottom-start"
+                  popperProps={Object {}}
+                  targetComponent={
+                    <div
+                      className="react-datepicker__input-container"
+                    >
+                      <input
+                        className="transaction-line-date"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        readOnly={false}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  }
+                >
+                  <Manager>
+                    <Reference>
+                      <InnerReference
+                        setReferenceNode={[Function]}
+                      >
+                        <div
+                          className="react-datepicker-wrapper"
+                        >
+                          <div
+                            className="react-datepicker__input-container"
+                          >
+                            <input
+                              className="transaction-line-date"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              readOnly={false}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </InnerReference>
+                    </Reference>
+                  </Manager>
+                </PopperComponent>
+              </DatePicker>
+              <CurrencyInput
+                allowNegative={false}
+                autoFocus={false}
+                className="transaction-line-amount"
+                decimalSeparator="."
+                inputType="text"
+                onChange={[Function]}
+                onChangeEvent={[Function]}
+                precision="2"
+                prefix=""
+                selectAllOnFocus={false}
+                suffix=""
+                thousandSeparator=","
+                value={1}
+              >
+                <input
+                  className="transaction-line-amount"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onMouseUp={[Function]}
+                  type="text"
+                  value="1.00"
+                />
+              </CurrencyInput>
+            </div>
+          </div>
+        </TransactionLine>
+        <div
+          className="col-sm-1"
+        >
+          <button
+            className="btn btn-primary"
+            onClick={[Function]}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </AddTransactions>
+    <TransactionsView
+      transactions={
+        Array [
+          Object {
+            "amount": 100,
+            "category": "",
+            "description": "",
+          },
+        ]
+      }
+    >
+      <div>
+        <TransactionBadge
+          key="0"
+          transaction={
+            Object {
+              "amount": 100,
+              "category": "",
+              "description": "",
+            }
+          }
+        >
+          <div
+            className="list-group-item transaction-badge-amount"
+          >
+            1.00$
+          </div>
+        </TransactionBadge>
+      </div>
+    </TransactionsView>
+  </div>
+</App>
+`;
