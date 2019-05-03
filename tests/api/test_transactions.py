@@ -1,3 +1,5 @@
+from datetime import date
+
 import pytest
 from flask import Flask
 
@@ -28,6 +30,7 @@ def test_add_transaction(client, core_transactions):
 
     resp = client.post('/api/transactions', json={
         "amount": "1000",
+        "date": "2019-01-02",
         "description": "stuff",
         "category": "cat1"
     })
@@ -35,13 +38,17 @@ def test_add_transaction(client, core_transactions):
     assert resp.status_code == 201
 
     assert capture.transaction.amount == 1000
+    assert capture.transaction.date == date(2019, 1, 2)
     assert capture.transaction.description == "stuff"
     assert capture.transaction.category == "cat1"
 
 
 def test_get_transactions(client, core_transactions):
     core_transactions.should_receive("get_all").and_return([
-        Transaction(100, description="desc1", category="cat1"),
+        Transaction(100,
+                    date=date(2019, 1, 2),
+                    description="desc1",
+                    category="cat1"),
         Transaction(200)]
     )
 
@@ -52,11 +59,13 @@ def test_get_transactions(client, core_transactions):
     assert resp.json == [
         {
             "amount": 100,
+            "date": "2019-01-02",
             "description": "desc1",
             "category": "cat1"
         },
         {
             "amount": 200,
+            "date": None,
             "description": None,
             "category": None
         }]

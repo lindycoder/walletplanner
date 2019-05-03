@@ -1,3 +1,5 @@
+from datetime import date
+
 from flask import Blueprint, request, jsonify
 
 from walletplanner.models import Transaction
@@ -22,6 +24,7 @@ def add_transaction():
 
     blueprint.core_transactions.add_transaction(Transaction(
         amount=int(data["amount"]),
+        date=date.fromisoformat(data["date"]),
         description=data["description"],
         category=data["category"]
     ))
@@ -34,6 +37,7 @@ def get_transaction():
     return jsonify([
         {
             "amount": t.amount,
+            "date": t.date.isoformat() if t.date is not None else None,
             "description": t.description,
             "category": t.category
         } for t in blueprint.core_transactions.get_all()
