@@ -37,4 +37,20 @@ describe('Server', () => {
     })
   });
 
+  it('Should get the transaction ', async () => {
+    const transactions = [{
+      "amount": 1000,
+      "description": "stuff",
+      "category": "cat1"
+    }];
+
+    fetch.once(JSON.stringify(transactions), { status: 200 });
+
+    let returnedTransactions = await server.getTransactions();
+
+    expect(returnedTransactions).toEqual(transactions)
+
+    expect(fetch.mock.calls[0][0]).toEqual('/api/transactions')
+  });
+
 });

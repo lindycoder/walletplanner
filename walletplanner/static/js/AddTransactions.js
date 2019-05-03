@@ -18,7 +18,8 @@ class AddTransactions extends React.Component {
     }
 
     letsgo(event){
-        this.props.server.addTransaction(this.state.transactions[0]);
+        this.props.server.addTransaction(this.state.transactions[0])
+            .then(this.props.onTransactionAdded);
     }
 
     render() {

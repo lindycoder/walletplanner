@@ -8,17 +8,23 @@ describe('AddTransactions', () => {
 
     beforeEach(() => {
         props = {
-            server: {addTransaction: jest.fn() }
+            server: {addTransaction: jest.fn() },
+            onTransactionAdded: jest.fn()
         };
         wrapper = shallow(<AddTransactions {...props} />);
     });
 
-    it('should invoke onChange when the input text changes', () => {
+    it('should invoke onChange when the input text changes', async () => {
+        props.server.addTransaction.mockResolvedValue(null);
+
         wrapper.find('button').simulate('click');
+        await undefined;
+
         expect(props.server.addTransaction).toHaveBeenCalledWith({
             "amount": 0,
             "description": "",
             "category": ""
-         });
+        });
+        expect(props.onTransactionAdded).toHaveBeenCalled();
     });
 });

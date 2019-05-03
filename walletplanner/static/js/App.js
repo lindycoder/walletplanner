@@ -1,7 +1,6 @@
 import React from 'react';
 import AddTransactions from './AddTransactions';
 import TransactionsView from './TransactionsView';
-import Server from './Server';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {

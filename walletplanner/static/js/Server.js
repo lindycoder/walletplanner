@@ -11,8 +11,11 @@ class Server {
       },
       body: JSON.stringify(transaction)
     });
-    // .then(response => res)
-    // .catch((error) => {});
+  }
+
+  async getTransactions() {
+    return fetch(this.apiCatalog.transactions)
+        .then(response => response.json());
   }
 }
 

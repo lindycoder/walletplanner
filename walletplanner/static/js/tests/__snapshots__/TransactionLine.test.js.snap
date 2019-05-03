@@ -19,7 +19,7 @@ exports[`TransactionLine should render an initial value 1`] = `
       selectAllOnFocus={false}
       suffix=""
       thousandSeparator=","
-      value={10}
+      value={0.1}
     />
   </div>
 </div>

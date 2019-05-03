@@ -26,10 +26,14 @@ class TransactionLine extends React.Component {
         return (
             <div className="form-row">
               <div className="form-group col-sm-11">
-               <CurrencyInput value={this.state.transaction.amount} onChangeEvent={this.handleChange.bind(this)}/>
+               <CurrencyInput value={this.format(this.state.transaction.amount)} onChangeEvent={this.handleChange.bind(this)}/>
               </div>
             </div>
         );
+    }
+
+    format(amount) {
+        return amount / 100;
     }
 };
 
