@@ -1,3 +1,5 @@
+import {moment} from './utils'
+
 class Server {
   constructor(apiCatalog) {
     this.apiCatalog = apiCatalog;
@@ -28,7 +30,7 @@ class Server {
 function fromApi(transaction) {
     return {
       amount: transaction.amount,
-      date: new Date(transaction.date),
+      date: moment(transaction.date),
       description: transaction.description,
       category: transaction.category
     }

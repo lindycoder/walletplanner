@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { moment } from '../utils';
 import TransactionLine from '../TransactionLine';
 
 describe('TransactionLine', () => {
@@ -10,7 +11,7 @@ describe('TransactionLine', () => {
         props = {
             transaction: {
                "amount": 10,
-               "date": new Date("2019-01-02T03:04:05.678"),
+               "date": moment("2019-01-02"),
                "description": "desc1",
                "category": "cat1"
             },
@@ -30,9 +31,9 @@ describe('TransactionLine', () => {
     });
 
     it('should invoke onChange when the date picker changes', () => {
-        wrapper.find('DatePicker').first().simulate('change', new Date("2019-01-03T03:04:05.678"));
+        wrapper.find('DatePicker').first().simulate('change', new Date("2019-05-01T04:00:00.000Z"));
         expect(props.onChange).toHaveBeenCalledWith(props.transaction);
-        expect(props.transaction.date).toEqual(new Date("2019-01-03T03:04:05.678"));
+        expect(props.transaction.date.isSame(moment("2019-05-01"))).toBe(true);
     });
 });
 

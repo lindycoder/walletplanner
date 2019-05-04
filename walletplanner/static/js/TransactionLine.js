@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CurrencyInput from 'react-currency-input';
 import DatePicker from 'react-datepicker';
-
+import { moment } from './utils';
 
 class TransactionLine extends React.Component {
     constructor(props) {
@@ -18,9 +18,10 @@ class TransactionLine extends React.Component {
 
         this._update(transaction);
     }
+
     handleDateChange(date) {
         const transaction = this.state.transaction;
-        transaction.date = date;
+        transaction.date = moment([date.getFullYear(), date.getMonth(), date.getDate()]);
 
         this._update(transaction);
     }
@@ -38,7 +39,7 @@ class TransactionLine extends React.Component {
             <div className="form-row">
               <div className="form-group col-sm-11">
                <DatePicker
-                   selected={this.state.transaction.date}
+                   selected={this._toDate(this.state.transaction.date)}
                    onChange={this.handleDateChange.bind(this)}
                    className="transaction-line-date"
                />
@@ -54,6 +55,10 @@ class TransactionLine extends React.Component {
 
     format(amount) {
         return amount / 100;
+    }
+
+    _toDate(date) {
+        return date ? date.toDate() : undefined;
     }
 };
 

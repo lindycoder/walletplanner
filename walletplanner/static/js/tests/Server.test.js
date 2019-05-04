@@ -1,3 +1,4 @@
+import {moment} from "../utils";
 import Server from "../Server";
 
 describe('Server', () => {
@@ -14,7 +15,7 @@ describe('Server', () => {
   it('Should add a transaction ', async () => {
     const transaction = {
       "amount": 1000,
-      "date": new Date("2019-02-01"),
+      "date": moment("2019-02-01"),
       "description": "stuff",
       "category": "cat1"
     };
@@ -53,7 +54,7 @@ describe('Server', () => {
 
     expect(returnedTransactions).toEqual([{
         "amount": 1000,
-        "date": new Date("2019-02-01"),
+        "date": moment("2019-02-01"),
         "description": "stuff",
         "category": "cat1"
     }]);
