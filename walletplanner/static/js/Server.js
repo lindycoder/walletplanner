@@ -13,7 +13,7 @@ class Server {
       },
       body: JSON.stringify({
         amount: transaction.amount,
-        date: transaction.date.toISOString().substr(0, 10),
+        date: transaction.date.format("YYYY-MM-DD"),
         description: transaction.description,
         category: transaction.category
       })

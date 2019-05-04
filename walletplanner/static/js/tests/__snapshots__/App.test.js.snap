@@ -28,6 +28,16 @@ exports[`App On transaction added, should refresh the transaction list 1`] = `
     }
   />
   <TransactionsView
+    currentDate={"2019-02-02T00:00:00.000Z"}
+    periodStart={-3}
+    periodicity={
+      StaticMonthly {
+        "days": Array [
+          1,
+          15,
+        ],
+      }
+    }
     transactions={
       Array [
         Object {
@@ -60,6 +70,16 @@ exports[`App should render correctly 1`] = `
     }
   />
   <TransactionsView
+    currentDate={"2019-02-02T00:00:00.000Z"}
+    periodStart={-3}
+    periodicity={
+      StaticMonthly {
+        "days": Array [
+          1,
+          15,
+        ],
+      }
+    }
     transactions={Array []}
   />
 </div>

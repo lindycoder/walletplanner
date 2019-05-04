@@ -1,6 +1,8 @@
 import React from 'react';
 import AddTransactions from './AddTransactions';
 import TransactionsView from './TransactionsView';
+import {StaticMonthly} from './Periodicity';
+import {moment} from './utils';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
@@ -16,8 +18,12 @@ class App extends React.Component {
     return (
       <div className="App container">
         <h1 className="display-4">Wall Planner</h1>
-        <AddTransactions server={this.props.server} onTransactionAdded={this.refreshTransactions.bind(this)}/>
-        <TransactionsView transactions={this.state.transactions}/>
+        <AddTransactions server={this.props.server}
+                         onTransactionAdded={this.refreshTransactions.bind(this)}/>
+        <TransactionsView transactions={this.state.transactions}
+                          periodicity={new StaticMonthly([1, 15])}
+                          currentDate={moment().startOf('day')}
+                          periodStart={-3} />
       </div>
     )
   }

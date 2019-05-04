@@ -1,3 +1,5 @@
+import {moment} from "../../utils"
+
 export default class FakeServer {
 
   constructor() {
@@ -9,6 +11,13 @@ export default class FakeServer {
   }
 
   async getTransactions() {
-    return JSON.parse(JSON.stringify(this.transactions));
+    return this.transactions.map(transaction => {
+        return {
+          amount: transaction.amount,
+          date: moment(transaction.date),
+          description: transaction.description,
+          category: transaction.category
+        }
+    });
   }
 }

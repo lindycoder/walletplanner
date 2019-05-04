@@ -1,26 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransactionsView should render correctly 1`] = `
+exports[`TransactionsView should render correctly amounts in the correct column 1`] = `
 <div>
-  <TransactionBadge
+  <div
+    className="transaction-view-period"
     key="0"
-    transaction={
-      Object {
-        "amount": 1000,
-        "category": "cat1",
-        "description": "desc1",
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2018-12-15
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2018-12-31T00:00:00.000Z",
+          "description": "3 periods ago",
+        }
       }
-    }
-  />
-  <TransactionBadge
+    />
+  </div>
+  <div
+    className="transaction-view-period"
     key="1"
-    transaction={
-      Object {
-        "amount": 2000,
-        "category": "cat1",
-        "description": "desc2",
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-01-01
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-01-01T00:00:00.000Z",
+          "description": "2 periods ago",
+        }
       }
-    }
-  />
+    />
+  </div>
+  <div
+    className="transaction-view-period"
+    key="2"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-01-15
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-01-15T00:00:00.000Z",
+          "description": "1 period ago",
+        }
+      }
+    />
+  </div>
+  <div
+    className="transaction-view-period"
+    key="3"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-02-01
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-02-06T00:00:00.000Z",
+          "description": "Current period 1",
+        }
+      }
+    />
+    <TransactionBadge
+      key="1"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-02-08T00:00:00.000Z",
+          "description": "Current period 2",
+        }
+      }
+    />
+  </div>
+  <div
+    className="transaction-view-period"
+    key="4"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-02-15
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-02-26T00:00:00.000Z",
+          "description": "Next period 2",
+        }
+      }
+    />
+  </div>
+  <div
+    className="transaction-view-period"
+    key="5"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-03-01
+    </div>
+  </div>
+  <div
+    className="transaction-view-period"
+    key="6"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-03-15
+    </div>
+  </div>
+  <div
+    className="transaction-view-period"
+    key="7"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-04-01
+    </div>
+  </div>
+  <div
+    className="transaction-view-period"
+    key="8"
+  >
+    <div
+      className="transaction-view-date"
+    >
+      2019-04-15
+    </div>
+    <TransactionBadge
+      key="0"
+      transaction={
+        Object {
+          "amount": 1000,
+          "category": null,
+          "date": "2019-04-30T00:00:00.000Z",
+          "description": "In 5 periods",
+        }
+      }
+    />
+  </div>
 </div>
 `;

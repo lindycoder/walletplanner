@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {moment} from './utils';
 import TransactionLine from './TransactionLine';
 
 class AddTransactions extends React.Component {
@@ -10,6 +11,7 @@ class AddTransactions extends React.Component {
             transactions: [
                 {
                    "amount": 0,
+                   "date": moment(),
                    "description": "",
                    "category": ""
                 }
