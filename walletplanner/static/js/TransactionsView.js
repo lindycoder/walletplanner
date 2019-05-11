@@ -26,17 +26,19 @@ class TransactionsView extends React.Component {
         }
 
         return (
-            <div>
-                {displayedPeriods.map((period, periodIndex) => (
-                    <div key={periodIndex} className="transaction-view-period">
-                        <div className="transaction-view-date">{period.start.format("YYYY-MM-DD")}</div>
-                        {this.props.transactions
-                                .filter(transaction => period.contains(transaction.date, { excludeEnd: true }))
+            <div className="container">
+                <div className="row">
+                    {displayedPeriods.map((period, periodIndex)=> (
+                        <div key={periodIndex} className="transaction-view-period col-sm">
+                            <div className="transaction-view-date">{period.start.format("YYYY-MM-DD")}</div>
+                            {this.props.transactions
+                                .filter(transaction => period.contains(transaction.date, {excludeEnd: true}))
                                 .map((transaction, transactionIndex) => (
-                            <TransactionBadge key={transactionIndex} transaction={transaction} />
-                        ))}
-                    </div>
-                ))}
+                                    <TransactionBadge key={transactionIndex} transaction={transaction}/>
+                                ))}
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }
@@ -44,10 +46,10 @@ class TransactionsView extends React.Component {
 
 
 TransactionsView.propTypes = {
-  transactions: PropTypes.any.isRequired,
-  periodicity: PropTypes.any.isRequired,
-  currentDate: PropTypes.any.isRequired,
-  periodStart: PropTypes.any.isRequired
+    transactions: PropTypes.any.isRequired,
+    periodicity: PropTypes.any.isRequired,
+    currentDate: PropTypes.any.isRequired,
+    periodStart: PropTypes.any.isRequired
 };
 
 export default TransactionsView;

@@ -7,7 +7,7 @@ exports[`App On transaction added, should refresh the transaction list 1`] = `
   <h1
     className="display-4"
   >
-    Wall Planner
+    Wallet Planner
   </h1>
   <AddTransactions
     onTransactionAdded={[Function]}
@@ -59,7 +59,7 @@ exports[`App should render correctly 1`] = `
   <h1
     className="display-4"
   >
-    Wall Planner
+    Wallet Planner
   </h1>
   <AddTransactions
     onTransactionAdded={[Function]}

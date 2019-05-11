@@ -8,7 +8,7 @@ describe('App', () => {
     let wrapper;
 
     beforeEach(() => {
-        Date.now = jest.fn(() => new Date(2019, 1, 2))
+        Date.now = jest.fn(() => new Date(2019, 1, 2));
 
         props = {
           homeUrl: '/home-url',

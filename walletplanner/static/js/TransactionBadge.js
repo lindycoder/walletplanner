@@ -10,7 +10,7 @@ class TransactionBadge extends React.Component {
 
     render() {
         return (
-            <div className="list-group-item transaction-badge-amount">{this.formatAmount(this.props.transaction.amount)}</div>
+            <span className="badge badge-light transaction-badge-amount">{this.formatAmount(this.props.transaction.amount)}</span>
         );
     }
 

@@ -23,7 +23,7 @@ exports[`App should be able to add and see a transaction 1`] = `
     <h1
       className="display-4"
     >
-      Wall Planner
+      Wallet Planner
     </h1>
     <AddTransactions
       onTransactionAdded={[Function]}
@@ -218,112 +218,118 @@ exports[`App should be able to add and see a transaction 1`] = `
         ]
       }
     >
-      <div>
+      <div
+        className="container"
+      >
         <div
-          className="transaction-view-period"
-          key="0"
+          className="row"
         >
           <div
-            className="transaction-view-date"
-          >
-            2018-12-15
-          </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="1"
-        >
-          <div
-            className="transaction-view-date"
-          >
-            2019-01-01
-          </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="2"
-        >
-          <div
-            className="transaction-view-date"
-          >
-            2019-01-15
-          </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="3"
-        >
-          <div
-            className="transaction-view-date"
-          >
-            2019-02-01
-          </div>
-          <TransactionBadge
+            className="transaction-view-period col-sm"
             key="0"
-            transaction={
-              Object {
-                "amount": 100,
-                "category": "",
-                "date": "2019-02-02T00:00:00.000Z",
-                "description": "",
-              }
-            }
           >
             <div
-              className="list-group-item transaction-badge-amount"
+              className="transaction-view-date"
             >
-              1.00$
+              2018-12-15
             </div>
-          </TransactionBadge>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="4"
-        >
-          <div
-            className="transaction-view-date"
-          >
-            2019-02-15
           </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="5"
-        >
           <div
-            className="transaction-view-date"
+            className="transaction-view-period col-sm"
+            key="1"
           >
-            2019-03-01
+            <div
+              className="transaction-view-date"
+            >
+              2019-01-01
+            </div>
           </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="6"
-        >
           <div
-            className="transaction-view-date"
+            className="transaction-view-period col-sm"
+            key="2"
           >
-            2019-03-15
+            <div
+              className="transaction-view-date"
+            >
+              2019-01-15
+            </div>
           </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="7"
-        >
           <div
-            className="transaction-view-date"
+            className="transaction-view-period col-sm"
+            key="3"
           >
-            2019-04-01
+            <div
+              className="transaction-view-date"
+            >
+              2019-02-01
+            </div>
+            <TransactionBadge
+              key="0"
+              transaction={
+                Object {
+                  "amount": 100,
+                  "category": "",
+                  "date": "2019-02-02T00:00:00.000Z",
+                  "description": "",
+                }
+              }
+            >
+              <span
+                className="badge badge-light transaction-badge-amount"
+              >
+                1.00$
+              </span>
+            </TransactionBadge>
           </div>
-        </div>
-        <div
-          className="transaction-view-period"
-          key="8"
-        >
           <div
-            className="transaction-view-date"
+            className="transaction-view-period col-sm"
+            key="4"
           >
-            2019-04-15
+            <div
+              className="transaction-view-date"
+            >
+              2019-02-15
+            </div>
+          </div>
+          <div
+            className="transaction-view-period col-sm"
+            key="5"
+          >
+            <div
+              className="transaction-view-date"
+            >
+              2019-03-01
+            </div>
+          </div>
+          <div
+            className="transaction-view-period col-sm"
+            key="6"
+          >
+            <div
+              className="transaction-view-date"
+            >
+              2019-03-15
+            </div>
+          </div>
+          <div
+            className="transaction-view-period col-sm"
+            key="7"
+          >
+            <div
+              className="transaction-view-date"
+            >
+              2019-04-01
+            </div>
+          </div>
+          <div
+            className="transaction-view-period col-sm"
+            key="8"
+          >
+            <div
+              className="transaction-view-date"
+            >
+              2019-04-15
+            </div>
           </div>
         </div>
       </div>

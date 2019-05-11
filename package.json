@@ -39,6 +39,9 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "automock": false
+    "automock": false,
+    "globals": {
+      "tz": "UTC"
+    }
   }
 }

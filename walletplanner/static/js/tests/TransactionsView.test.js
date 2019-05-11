@@ -31,7 +31,7 @@ describe('TransactionsView', () => {
     it('should render correctly amounts in the correct column', () => {
         expect(wrapper).toMatchSnapshot();
 
-        let periods = wrapper.find("div.transaction-view-period")
+        let periods = wrapper.find("div.transaction-view-period");
         expect(periods).toHaveLength(9, "Periods should be 3 before, current plus 5 next");
 
         expect(periods.at(0).find("div.transaction-view-date").text()).toBe("2018-12-15");

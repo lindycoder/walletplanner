@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App container">
-        <h1 className="display-4">Wall Planner</h1>
+        <h1 className="display-4">Wallet Planner</h1>
         <AddTransactions server={this.props.server}
                          onTransactionAdded={this.refreshTransactions.bind(this)}/>
         <TransactionsView transactions={this.state.transactions}
