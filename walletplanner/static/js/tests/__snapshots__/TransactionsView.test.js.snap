@@ -1,179 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransactionsView should render correctly amounts in the correct column 1`] = `
+exports[`TransactionsView should render correctly 1`] = `
 <div
   className="container"
 >
   <div
     className="row"
   >
-    <div
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="0"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2018-12-15
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-01-01T00:00:00.000Z",
+          "start": "2018-12-15T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2018-12-31T00:00:00.000Z",
             "description": "3 periods ago",
-          }
-        }
-      />
-    </div>
-    <div
+          },
+        ]
+      }
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="1"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-01-01
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-01-15T00:00:00.000Z",
+          "start": "2019-01-01T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-01-01T00:00:00.000Z",
             "description": "2 periods ago",
-          }
-        }
-      />
-    </div>
-    <div
+          },
+        ]
+      }
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="2"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-01-15
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-02-01T00:00:00.000Z",
+          "start": "2019-01-15T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-01-15T00:00:00.000Z",
             "description": "1 period ago",
-          }
-        }
-      />
-    </div>
-    <div
+          },
+        ]
+      }
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="3"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-02-01
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-02-15T00:00:00.000Z",
+          "start": "2019-02-01T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-02-06T00:00:00.000Z",
             "description": "Current period 1",
-          }
-        }
-      />
-      <TransactionBadge
-        key="1"
-        transaction={
+          },
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-02-08T00:00:00.000Z",
             "description": "Current period 2",
-          }
-        }
-      />
-    </div>
-    <div
+          },
+        ]
+      }
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="4"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-02-15
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-03-01T00:00:00.000Z",
+          "start": "2019-02-15T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-02-26T00:00:00.000Z",
             "description": "Next period 2",
-          }
-        }
-      />
-    </div>
-    <div
+          },
+        ]
+      }
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="5"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-03-01
-      </div>
-    </div>
-    <div
+      period={
+        t {
+          "end": "2019-03-15T00:00:00.000Z",
+          "start": "2019-03-01T00:00:00.000Z",
+        }
+      }
+      transactions={Array []}
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="6"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-03-15
-      </div>
-    </div>
-    <div
+      period={
+        t {
+          "end": "2019-04-01T00:00:00.000Z",
+          "start": "2019-03-15T00:00:00.000Z",
+        }
+      }
+      transactions={Array []}
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="7"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-04-01
-      </div>
-    </div>
-    <div
+      period={
+        t {
+          "end": "2019-04-15T00:00:00.000Z",
+          "start": "2019-04-01T00:00:00.000Z",
+        }
+      }
+      transactions={Array []}
+    />
+    <TransactionsPeriodView
       className="transaction-view-period col-sm"
       key="8"
-    >
-      <div
-        className="transaction-view-date"
-      >
-        2019-04-15
-      </div>
-      <TransactionBadge
-        key="0"
-        transaction={
+      period={
+        t {
+          "end": "2019-05-01T00:00:00.000Z",
+          "start": "2019-04-15T00:00:00.000Z",
+        }
+      }
+      transactions={
+        Array [
           Object {
             "amount": 1000,
             "category": null,
             "date": "2019-04-30T00:00:00.000Z",
             "description": "In 5 periods",
-          }
-        }
-      />
-    </div>
+          },
+        ]
+      }
+    />
   </div>
 </div>
 `;

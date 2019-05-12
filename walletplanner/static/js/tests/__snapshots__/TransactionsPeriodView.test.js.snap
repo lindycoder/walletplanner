@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionsPeriodView should render correctly 1`] = `
+<div>
+  <div
+    className="transaction-view-date"
+  >
+    2019-02-01
+  </div>
+  <TransactionBadge
+    key="0"
+    transaction={
+      Object {
+        "amount": 1000,
+        "category": null,
+        "date": "2019-02-06T00:00:00.000Z",
+        "description": "Current period 1",
+      }
+    }
+  />
+  <TransactionBadge
+    key="1"
+    transaction={
+      Object {
+        "amount": 1000,
+        "category": null,
+        "date": "2019-02-08T00:00:00.000Z",
+        "description": "Current period 2",
+      }
+    }
+  />
+</div>
+`;

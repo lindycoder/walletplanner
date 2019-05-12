@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TransactionBadge from './TransactionBadge';
+import TransactionsPeriodView from './TransactionsPeriodView';
 
 
-class TransactionsView extends React.Component {
+export default class TransactionsView extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -28,21 +28,20 @@ class TransactionsView extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    {displayedPeriods.map((period, periodIndex)=> (
-                        <div key={periodIndex} className="transaction-view-period col-sm">
-                            <div className="transaction-view-date">{period.start.format("YYYY-MM-DD")}</div>
-                            {this.props.transactions
-                                .filter(transaction => period.contains(transaction.date, {excludeEnd: true}))
-                                .map((transaction, transactionIndex) => (
-                                    <TransactionBadge key={transactionIndex} transaction={transaction}/>
-                                ))}
-                        </div>
+                    {displayedPeriods.map((period, periodIndex) => (
+                        <TransactionsPeriodView
+                            key={periodIndex}
+                            className="transaction-view-period col-sm"
+                            period={period}
+                            transactions={this.props.transactions.filter(transaction =>
+                                period.contains(transaction.date, {excludeEnd: true}))}
+                        />
                     ))}
                 </div>
             </div>
         );
     }
-};
+}
 
 
 TransactionsView.propTypes = {
@@ -51,5 +50,3 @@ TransactionsView.propTypes = {
     currentDate: PropTypes.any.isRequired,
     periodStart: PropTypes.any.isRequired
 };
-
-export default TransactionsView;
