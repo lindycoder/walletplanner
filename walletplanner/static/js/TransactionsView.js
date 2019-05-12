@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TransactionsPeriodView from './TransactionsPeriodView';
+import Period from "./Period";
 
 
 export default class TransactionsView extends React.Component {
@@ -32,9 +33,13 @@ export default class TransactionsView extends React.Component {
                         <TransactionsPeriodView
                             key={periodIndex}
                             className="transaction-view-period col-sm"
-                            period={period}
-                            transactions={this.props.transactions.filter(transaction =>
-                                period.contains(transaction.date, {excludeEnd: true}))}
+                            period={new Period({
+                                openingBalance: 0,
+                                range: period,
+                                transactions: this.props.transactions.filter(
+                                    transaction => period.contains(transaction.date, {excludeEnd: true})
+                                )
+                            })}
                         />
                     ))}
                 </div>

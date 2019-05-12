@@ -228,12 +228,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="0"
             period={
-              t {
-                "end": "2019-01-01T00:00:00.000Z",
-                "start": "2018-12-15T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-01-01T00:00:00.000Z",
+                  "start": "2018-12-15T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -257,12 +260,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="1"
             period={
-              t {
-                "end": "2019-01-15T00:00:00.000Z",
-                "start": "2019-01-01T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-01-15T00:00:00.000Z",
+                  "start": "2019-01-01T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -286,12 +292,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="2"
             period={
-              t {
-                "end": "2019-02-01T00:00:00.000Z",
-                "start": "2019-01-15T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-02-01T00:00:00.000Z",
+                  "start": "2019-01-15T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -315,20 +324,21 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="3"
             period={
-              t {
-                "end": "2019-02-15T00:00:00.000Z",
-                "start": "2019-02-01T00:00:00.000Z",
-              }
-            }
-            transactions={
-              Array [
-                Object {
-                  "amount": 100,
-                  "category": "",
-                  "date": "2019-02-02T00:00:00.000Z",
-                  "description": "",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-02-15T00:00:00.000Z",
+                  "start": "2019-02-01T00:00:00.000Z",
                 },
-              ]
+                "transactions": Array [
+                  Object {
+                    "amount": 100,
+                    "category": "",
+                    "date": "2019-02-02T00:00:00.000Z",
+                    "description": "",
+                  },
+                ],
+              }
             }
           >
             <div
@@ -371,12 +381,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="4"
             period={
-              t {
-                "end": "2019-03-01T00:00:00.000Z",
-                "start": "2019-02-15T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-03-01T00:00:00.000Z",
+                  "start": "2019-02-15T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -400,12 +413,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="5"
             period={
-              t {
-                "end": "2019-03-15T00:00:00.000Z",
-                "start": "2019-03-01T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-03-15T00:00:00.000Z",
+                  "start": "2019-03-01T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -429,12 +445,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="6"
             period={
-              t {
-                "end": "2019-04-01T00:00:00.000Z",
-                "start": "2019-03-15T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-04-01T00:00:00.000Z",
+                  "start": "2019-03-15T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -458,12 +477,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="7"
             period={
-              t {
-                "end": "2019-04-15T00:00:00.000Z",
-                "start": "2019-04-01T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-04-15T00:00:00.000Z",
+                  "start": "2019-04-01T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
@@ -487,12 +509,15 @@ exports[`App should be able to add and see a transaction 1`] = `
             className="transaction-view-period col-sm"
             key="8"
             period={
-              t {
-                "end": "2019-05-01T00:00:00.000Z",
-                "start": "2019-04-15T00:00:00.000Z",
+              Period {
+                "openingBalance": 0,
+                "range": t {
+                  "end": "2019-05-01T00:00:00.000Z",
+                  "start": "2019-04-15T00:00:00.000Z",
+                },
+                "transactions": Array [],
               }
             }
-            transactions={Array []}
           >
             <div
               className="transaction-view-period col-sm"
