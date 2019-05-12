@@ -29,7 +29,7 @@ describe('App', () => {
         wrapper.find('AddTransactions').simulate('transactionAdded');
         await undefined;
 
-        expect(wrapper.state().transactions).toBe(transactionList)
+        expect(wrapper.state().transactions).toBe(transactionList);
 
         expect(wrapper).toMatchSnapshot();
     });

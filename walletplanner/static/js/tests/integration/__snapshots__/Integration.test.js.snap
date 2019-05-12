@@ -243,6 +243,14 @@ exports[`App should be able to add and see a transaction 1`] = `
               >
                 2018-12-15
               </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
+              </div>
             </div>
           </TransactionsPeriodView>
           <TransactionsPeriodView
@@ -264,6 +272,14 @@ exports[`App should be able to add and see a transaction 1`] = `
               >
                 2019-01-01
               </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
+              </div>
             </div>
           </TransactionsPeriodView>
           <TransactionsPeriodView
@@ -284,6 +300,14 @@ exports[`App should be able to add and see a transaction 1`] = `
                 className="transaction-view-date"
               >
                 2019-01-15
+              </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -315,23 +339,32 @@ exports[`App should be able to add and see a transaction 1`] = `
               >
                 2019-02-01
               </div>
-              <TransactionBadge
-                key="0"
-                transaction={
-                  Object {
-                    "amount": 100,
-                    "category": "",
-                    "date": "2019-02-02T00:00:00.000Z",
-                    "description": "",
-                  }
-                }
+              <div
+                className="transactions"
               >
-                <span
-                  className="badge badge-light transaction-badge-amount"
+                <TransactionBadge
+                  key="0"
+                  transaction={
+                    Object {
+                      "amount": 100,
+                      "category": "",
+                      "date": "2019-02-02T00:00:00.000Z",
+                      "description": "",
+                    }
+                  }
                 >
-                  1.00$
-                </span>
-              </TransactionBadge>
+                  <span
+                    className="badge badge-light transaction-badge-amount"
+                  >
+                    1.00$
+                  </span>
+                </TransactionBadge>
+              </div>
+              <div
+                className="transactions-total"
+              >
+                1.00$
+              </div>
             </div>
           </TransactionsPeriodView>
           <TransactionsPeriodView
@@ -352,6 +385,14 @@ exports[`App should be able to add and see a transaction 1`] = `
                 className="transaction-view-date"
               >
                 2019-02-15
+              </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -374,6 +415,14 @@ exports[`App should be able to add and see a transaction 1`] = `
               >
                 2019-03-01
               </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
+              </div>
             </div>
           </TransactionsPeriodView>
           <TransactionsPeriodView
@@ -394,6 +443,14 @@ exports[`App should be able to add and see a transaction 1`] = `
                 className="transaction-view-date"
               >
                 2019-03-15
+              </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -416,6 +473,14 @@ exports[`App should be able to add and see a transaction 1`] = `
               >
                 2019-04-01
               </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
+              </div>
             </div>
           </TransactionsPeriodView>
           <TransactionsPeriodView
@@ -436,6 +501,14 @@ exports[`App should be able to add and see a transaction 1`] = `
                 className="transaction-view-date"
               >
                 2019-04-15
+              </div>
+              <div
+                className="transactions"
+              />
+              <div
+                className="transactions-total"
+              >
+                0.00$
               </div>
             </div>
           </TransactionsPeriodView>

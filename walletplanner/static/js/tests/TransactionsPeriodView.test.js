@@ -23,7 +23,9 @@ describe('TransactionsPeriodView', () => {
     });
 
     it('should render correctly amounts in the correct column', () => {
-        expect(wrapper.find("div.transaction-view-date").text()).toBe("2019-02-01");
-        expect(wrapper.find("TransactionBadge")).toHaveLength(2);
+        expect(wrapper.find(".transaction-view-date").text()).toBe("2019-02-01");
+        expect(wrapper.find(".transactions > TransactionBadge")).toHaveLength(2);
+
+        expect(wrapper.find(".transactions-total").text()).toBe('20.00$');
     });
 });
