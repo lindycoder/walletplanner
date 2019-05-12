@@ -9,3 +9,13 @@ export default class Period {
         return this.transactions.reduce((total, e) => total + e.amount, this.openingBalance);
     }
 }
+
+export class InitialPeriod extends Period{
+    constructor(openingBalance) {
+        super({openingBalance: openingBalance});
+    }
+
+    getClosingBalance() {
+        return this.openingBalance;
+    }
+}

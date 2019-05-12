@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TransactionsPeriodView from './TransactionsPeriodView';
-import Period from "./Period";
+import Period, {InitialPeriod} from "./Period";
 
 
 export default class TransactionsView extends React.Component {
@@ -10,20 +10,47 @@ export default class TransactionsView extends React.Component {
     }
 
     render() {
+        let firstTransactionDate = this.props.transactions.reduce(
+            (min, transaction) => transaction.date < min ? transaction.date : min,
+            this.props.currentDate
+        );
+
+        let previousPeriod = new InitialPeriod(this.props.openingBalance);
+
+        let periods = [];
+
         let currentPeriod = this.props.periodicity.currentPeriod(this.props.currentDate);
+        let currentPeriodIndex;
 
-        let displayedPeriods = [];
+        let beforeFirst = this.props.periodicity.pastPeriods(firstTransactionDate).next().value;
+        for (let range of this.props.periodicity.futurePeriods(beforeFirst.start)) {
+            periods.push(new Period({
+                openingBalance: previousPeriod.getClosingBalance(),
+                range: range,
+                transactions: this.props.transactions.filter(
+                    transaction => range.contains(transaction.date, {excludeEnd: true})
+                )
+            }));
 
-        let pastGen = this.props.periodicity.pastPeriods(this.props.currentDate);
-        for (let i = this.props.periodStart; i < 0; i++) {
-            displayedPeriods.unshift(pastGen.next().value);
+            previousPeriod = periods[periods.length - 1];
+
+            if (range.isSame(currentPeriod)) {
+                currentPeriodIndex = periods.length - 1;
+            }
+            if (periods.length === currentPeriodIndex + 6) {
+                break;
+            }
         }
 
-        displayedPeriods.push(currentPeriod);
+        let displayedPeriods = periods.slice(Math.max(0, currentPeriodIndex - 3));
 
-        let futureGen = this.props.periodicity.futurePeriods(this.props.currentDate);
-        for (let i = 0; i < 5; i++) {
-            displayedPeriods.push(futureGen.next().value);
+        let pastGenerator = this.props.periodicity.pastPeriods(displayedPeriods[0].range.start);
+        while (displayedPeriods.length < 9) {
+            displayedPeriods.unshift(new Period({
+                openingBalance: this.props.openingBalance,
+                range: pastGenerator.next().value,
+                transactions: []
+            }));
         }
 
         return (
@@ -33,13 +60,7 @@ export default class TransactionsView extends React.Component {
                         <TransactionsPeriodView
                             key={periodIndex}
                             className="transaction-view-period col-sm"
-                            period={new Period({
-                                openingBalance: 0,
-                                range: period,
-                                transactions: this.props.transactions.filter(
-                                    transaction => period.contains(transaction.date, {excludeEnd: true})
-                                )
-                            })}
+                            period={period}
                         />
                     ))}
                 </div>

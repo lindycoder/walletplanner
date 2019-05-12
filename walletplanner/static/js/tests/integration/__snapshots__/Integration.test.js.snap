@@ -198,6 +198,7 @@ exports[`App should be able to add and see a transaction 1`] = `
     </AddTransactions>
     <TransactionsView
       currentDate={"2019-02-02T00:00:00.000Z"}
+      openingBalance={0}
       periodStart={-3}
       periodicity={
         StaticMonthly {
@@ -382,7 +383,7 @@ exports[`App should be able to add and see a transaction 1`] = `
             key="4"
             period={
               Period {
-                "openingBalance": 0,
+                "openingBalance": 100,
                 "range": t {
                   "end": "2019-03-01T00:00:00.000Z",
                   "start": "2019-02-15T00:00:00.000Z",
@@ -405,7 +406,7 @@ exports[`App should be able to add and see a transaction 1`] = `
               <div
                 className="transactions-total"
               >
-                0.00$
+                1.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -414,7 +415,7 @@ exports[`App should be able to add and see a transaction 1`] = `
             key="5"
             period={
               Period {
-                "openingBalance": 0,
+                "openingBalance": 100,
                 "range": t {
                   "end": "2019-03-15T00:00:00.000Z",
                   "start": "2019-03-01T00:00:00.000Z",
@@ -437,7 +438,7 @@ exports[`App should be able to add and see a transaction 1`] = `
               <div
                 className="transactions-total"
               >
-                0.00$
+                1.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -446,7 +447,7 @@ exports[`App should be able to add and see a transaction 1`] = `
             key="6"
             period={
               Period {
-                "openingBalance": 0,
+                "openingBalance": 100,
                 "range": t {
                   "end": "2019-04-01T00:00:00.000Z",
                   "start": "2019-03-15T00:00:00.000Z",
@@ -469,7 +470,7 @@ exports[`App should be able to add and see a transaction 1`] = `
               <div
                 className="transactions-total"
               >
-                0.00$
+                1.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -478,7 +479,7 @@ exports[`App should be able to add and see a transaction 1`] = `
             key="7"
             period={
               Period {
-                "openingBalance": 0,
+                "openingBalance": 100,
                 "range": t {
                   "end": "2019-04-15T00:00:00.000Z",
                   "start": "2019-04-01T00:00:00.000Z",
@@ -501,7 +502,7 @@ exports[`App should be able to add and see a transaction 1`] = `
               <div
                 className="transactions-total"
               >
-                0.00$
+                1.00$
               </div>
             </div>
           </TransactionsPeriodView>
@@ -510,7 +511,7 @@ exports[`App should be able to add and see a transaction 1`] = `
             key="8"
             period={
               Period {
-                "openingBalance": 0,
+                "openingBalance": 100,
                 "range": t {
                   "end": "2019-05-01T00:00:00.000Z",
                   "start": "2019-04-15T00:00:00.000Z",
@@ -533,7 +534,7 @@ exports[`App should be able to add and see a transaction 1`] = `
               <div
                 className="transactions-total"
               >
-                0.00$
+                1.00$
               </div>
             </div>
           </TransactionsPeriodView>
