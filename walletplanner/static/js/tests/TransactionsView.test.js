@@ -95,4 +95,31 @@ describe('TransactionsView', () => {
             expect(wrapper).toMatchSnapshot();
         });
     });
+
+    describe('With recurrences', () => {
+
+        beforeEach(() => {
+            props = {
+                transactions: [
+                    {"amount": 1000, "date": moment("2019-02-15"), "description": "Static transaction", "category": null},
+                ],
+                recurrences: [
+                    {
+                        "transaction": {"amount": 1000, "date": moment("2019-01-01"), "description": "Recurring transaction", "category": null},
+                        "interval": {months:1}
+                    }
+                ],
+                periodicity: new StaticMonthly([1, 15]),
+                currentDate: moment("2019-02-01"),
+                periodStart: -3,
+                openingBalance: 1000
+            };
+            wrapper = shallow(<TransactionsView {...props} />);
+        });
+
+        it('should render correctly', () => {
+            expect(wrapper).toMatchSnapshot();
+        });
+    });
+
 });

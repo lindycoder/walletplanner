@@ -1,5 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TransactionsView With recurrences should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="0"
+      period={
+        Period {
+          "openingBalance": 1000,
+          "range": t {
+            "end": "2019-01-01T00:00:00.000Z",
+            "start": "2018-12-15T00:00:00.000Z",
+          },
+          "transactions": Array [],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="1"
+      period={
+        Period {
+          "openingBalance": 1000,
+          "range": t {
+            "end": "2019-01-15T00:00:00.000Z",
+            "start": "2019-01-01T00:00:00.000Z",
+          },
+          "transactions": Array [
+            Object {
+              "amount": 1000,
+              "category": null,
+              "date": "2019-01-01T00:00:00.000Z",
+              "description": "Recurring transaction",
+            },
+          ],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="2"
+      period={
+        Period {
+          "openingBalance": 2000,
+          "range": t {
+            "end": "2019-02-01T00:00:00.000Z",
+            "start": "2019-01-15T00:00:00.000Z",
+          },
+          "transactions": Array [],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="3"
+      period={
+        Period {
+          "openingBalance": 2000,
+          "range": t {
+            "end": "2019-02-15T00:00:00.000Z",
+            "start": "2019-02-01T00:00:00.000Z",
+          },
+          "transactions": Array [
+            Object {
+              "amount": 1000,
+              "category": null,
+              "date": "2019-02-01T00:00:00.000Z",
+              "description": "Recurring transaction",
+            },
+          ],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="4"
+      period={
+        Period {
+          "openingBalance": 3000,
+          "range": t {
+            "end": "2019-03-01T00:00:00.000Z",
+            "start": "2019-02-15T00:00:00.000Z",
+          },
+          "transactions": Array [
+            Object {
+              "amount": 1000,
+              "category": null,
+              "date": "2019-02-15T00:00:00.000Z",
+              "description": "Static transaction",
+            },
+          ],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="5"
+      period={
+        Period {
+          "openingBalance": 4000,
+          "range": t {
+            "end": "2019-03-15T00:00:00.000Z",
+            "start": "2019-03-01T00:00:00.000Z",
+          },
+          "transactions": Array [
+            Object {
+              "amount": 1000,
+              "category": null,
+              "date": "2019-03-01T00:00:00.000Z",
+              "description": "Recurring transaction",
+            },
+          ],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="6"
+      period={
+        Period {
+          "openingBalance": 5000,
+          "range": t {
+            "end": "2019-04-01T00:00:00.000Z",
+            "start": "2019-03-15T00:00:00.000Z",
+          },
+          "transactions": Array [],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="7"
+      period={
+        Period {
+          "openingBalance": 5000,
+          "range": t {
+            "end": "2019-04-15T00:00:00.000Z",
+            "start": "2019-04-01T00:00:00.000Z",
+          },
+          "transactions": Array [
+            Object {
+              "amount": 1000,
+              "category": null,
+              "date": "2019-04-01T00:00:00.000Z",
+              "description": "Recurring transaction",
+            },
+          ],
+        }
+      }
+    />
+    <TransactionsPeriodView
+      className="transaction-view-period col-sm"
+      key="8"
+      period={
+        Period {
+          "openingBalance": 6000,
+          "range": t {
+            "end": "2019-05-01T00:00:00.000Z",
+            "start": "2019-04-15T00:00:00.000Z",
+          },
+          "transactions": Array [],
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`TransactionsView With transactions should render correctly 1`] = `
 <div
   className="container"

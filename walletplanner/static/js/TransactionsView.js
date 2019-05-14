@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TransactionsPeriodView from './TransactionsPeriodView';
 import Period, {InitialPeriod} from "./Period";
+import {moment} from './utils';
 
 
 export default class TransactionsView extends React.Component {
@@ -10,7 +11,9 @@ export default class TransactionsView extends React.Component {
     }
 
     render() {
-        let firstTransactionDate = this.props.transactions.reduce(
+        let transactions = this.withRecurrences();
+
+        let firstTransactionDate = transactions.reduce(
             (min, transaction) => transaction.date < min ? transaction.date : min,
             this.props.currentDate
         );
@@ -27,7 +30,7 @@ export default class TransactionsView extends React.Component {
             periods.push(new Period({
                 openingBalance: previousPeriod.getClosingBalance(),
                 range: range,
-                transactions: this.props.transactions.filter(
+                transactions: transactions.filter(
                     transaction => range.contains(transaction.date, {excludeEnd: true})
                 )
             }));
@@ -67,11 +70,30 @@ export default class TransactionsView extends React.Component {
             </div>
         );
     }
+
+    withRecurrences() {
+        let transactions = this.props.transactions.slice();
+
+        if (this.props.recurrences) {
+            this.props.recurrences.forEach((recurrence => {
+                let newTransaction = Object.assign({}, recurrence.transaction);
+                for (let i = 0; i <= 100; i++) {
+                    transactions.push(newTransaction);
+
+                    newTransaction = Object.assign({}, newTransaction);
+                    newTransaction.date = moment(newTransaction.date).add(recurrence.interval);
+                }
+            }))
+        }
+
+        return transactions
+    }
 }
 
 
 TransactionsView.propTypes = {
     transactions: PropTypes.any.isRequired,
+    recurrences: PropTypes.any,
     periodicity: PropTypes.any.isRequired,
     currentDate: PropTypes.any.isRequired,
     periodStart: PropTypes.any.isRequired
